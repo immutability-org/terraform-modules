@@ -34,12 +34,12 @@ resource "aws_instance" "website"
     }
 
     tags {
-        Name = "${var.tagName}-${count.index}"
-        Finance = "${var.tagFinance}"
-        OwnerEmail = "${var.tagOwnerEmail}"
-        Schedule = "${var.tagSchedule}"
-        BusinessJustification = "${var.tagBusinessJustification}"
-        AutoStart = "${var.tagAutoStart}"
+        Name = "${var.tag_name}-${count.index}"
+        Finance = "${var.tag_finance}"
+        OwnerEmail = "${var.tag_owner_email}"
+        Schedule = "${var.tag_schedule}"
+        BusinessJustification = "${var.tag_business_justification}"
+        AutoStart = "${var.tag_auto_start}"
     }
 
     provisioner "file" {
