@@ -122,12 +122,12 @@ resource "aws_instance" "website"
 }
 
 resource "aws_security_group" "website" {
-    name = "${var.tagName}-security-group"
+    name = "${var.tag_name}-security-group"
     description = "Consul internal traffic + maintenance."
     vpc_id = "${var.vpc_id}"
 
     tags {
-        Name = "${var.tagName}"
+        Name = "${var.tag_name}"
     }
     // These are for internal traffic
 
