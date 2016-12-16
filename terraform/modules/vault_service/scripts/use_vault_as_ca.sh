@@ -8,7 +8,7 @@ logger() {
 
 echo "Use Vault as CA with allowed domains: $2"
 
-export VAULT_ADDR=https://`uname -n`.awstrp.net:8200
+export VAULT_ADDR=https://localhost:8200
 export CONSUL_VAULT_ADDR=https://vault.service.consul:8200
 export VAULT_TOKEN=$1
 export CONSUL=http://127.0.0.1:8500
@@ -30,7 +30,7 @@ logger $(vault write vault_intermediate/intermediate/set-signed certificate=@/tm
 echo "vault vault_intermediate/config/urls $CONSUL_VAULT_ADDR"
 logger $(vault write vault_intermediate/config/urls issuing_certificates="$CONSUL_VAULT_ADDR/v1/vault_intermediate/ca"  crl_distribution_points="$CONSUL_VAULT_ADDR/v1/vault_intermediate/crl")
 echo "setup role to issue certificates for $2"
-logger $(vault write vault_intermediate/roles/web_server key_bits=2048 max_ttl=8760h allowed_domains="awstrp.net,service.consul,$2" allow_subdomains=true allow_ip_sans=true)
+logger $(vault write vault_intermediate/roles/web_server key_bits=2048 max_ttl=8760h allowed_domains="service.consul,$2" allow_subdomains=true allow_ip_sans=true)
 
 logger $(
   curl -X PUT "$CONSUL/v1/kv/service/vault/root-cert" -d @/tmp/root.crt
