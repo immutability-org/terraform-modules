@@ -1,5 +1,5 @@
 
-variable "bastion_public_ip" {
+variable "bastion_host" {
     description = "IP of the bastion host"
 }
 

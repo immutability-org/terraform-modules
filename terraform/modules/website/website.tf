@@ -29,7 +29,7 @@ resource "aws_instance" "website"
         host          = "${self.private_ip}"
         private_key   = "${var.private_key}"
         agent         = "false"
-        bastion_host  = "${var.bastion_public_ip}"
+        bastion_host  = "${var.bastion_host}"
         bastion_user  = "${var.bastion_user}"
     }
 
