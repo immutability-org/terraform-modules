@@ -89,30 +89,30 @@ variable "vpc_id" {
 variable "vpc_cidr" {
 }
 
-variable "tagName" {
-    default = "fabio-router"
-    description = "Name tag for the fabio servers"
+
+variable "tag_name" {
+    description = "Name tag for the servers"
 }
 
-variable "tagFinance" {
+variable "tag_finance" {
     description = "Finance tag for the servers"
 }
 
-variable "tagOwnerEmail" {
+variable "tag_owner_email" {
     description = "Email tag for the servers"
 }
 
-variable "tagSchedule" {
+variable "tag_schedule" {
     default = "AlwaysUp"
     description = "Schedule tag for the servers"
 }
 
-variable "tagBusinessJustification" {
+variable "tag_business_justification" {
     default = "Short lived instance that will auto terminate"
     description = "BusinessJustification tag for the servers"
 }
 
-variable "tagAutoStart" {
+variable "tag_auto_start" {
     default = "Off"
     description = "AutoStart tag for the servers"
 }
