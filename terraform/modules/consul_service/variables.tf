@@ -75,7 +75,6 @@ variable "subnet_ids" {
 }
 
 variable "rest_service_url" {
-    default = "https://s3.amazonaws.com/adam-ciam-np-dev.troweprice.io/public/go-rest"
     description = "The url of the service single file executable (think golang)."
 }
 

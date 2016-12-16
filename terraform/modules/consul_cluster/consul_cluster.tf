@@ -1,6 +1,6 @@
 
 module "consul" {
-    source = "git::ssh://git@gitlab.troweprice.com/security-engineering/terraform-modules.git//terraform//modules//consul_node?ref=master"
+    source = "github.com/immutability-org/terraform-modules//terraform//modules//consul_node"
     ami = "${var.ami}"
     bastion_host = "${var.bastion_host}"
     bastion_user = "${var.bastion_user}"
